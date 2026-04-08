@@ -52,8 +52,7 @@ jobs:
           EAS_NO_VCS_DETECTION: true
           EAS_BUILD_NO_EXPO_GO_WARNING: true
         run: |
-          # Initialize EAS project with force to ensure it's created under the user's account
-          eas project:init --non-interactive --force || true
+          # Build using the projectId configured in app.config.ts
           eas build --platform android --profile production --non-interactive --wait
       
       - name: Download APK

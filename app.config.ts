@@ -36,12 +36,18 @@ const env = {
   scheme: schemeFromBundleId,
   iosBundleId: bundleId,
   androidPackage: bundleId,
+  easProjectId: "9d0983a6-d55e-4b1d-bf71-7d46eeba9d99",
 };
 
 const config: ExpoConfig = {
   name: env.appName,
   slug: env.appSlug,
   version: "1.0.0",
+  extra: {
+    eas: {
+      projectId: env.easProjectId,
+    },
+  },
   orientation: "portrait",
   icon: "./assets/images/icon.png",
   scheme: env.scheme,
