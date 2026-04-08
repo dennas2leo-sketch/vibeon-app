@@ -50,9 +50,10 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
           EAS_NO_VCS_DETECTION: true
+          EAS_BUILD_NO_EXPO_GO_WARNING: true
         run: |
-          # Initialize EAS project if not already done
-          eas project:init --non-interactive || true
+          # Initialize EAS project with force to ensure it's created under the user's account
+          eas project:init --non-interactive --force || true
           eas build --platform android --profile production --non-interactive --wait
       
       - name: Download APK
